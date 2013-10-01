@@ -37,10 +37,13 @@
 (defn echo [& args]
   (apply sh "echo" args))
 
-(defn echo-version []
-  (-> "--version" call-external-prog :out println))
-
+;; (defn echo-version []
+;;   (-> "--version" call-external-prog :out println))
+;; 
 (defn call-external-prog [& args]
   (apply sh "ps" args))
-
+;; 
 (println (:out (sh "cowsay" "Printing a command-line output")))
+
+; read directory in and call sequentially mplayer with every item as
+; long as the last mplayer actions stopped or finishes

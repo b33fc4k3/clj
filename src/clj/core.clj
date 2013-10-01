@@ -32,6 +32,7 @@
 ;;   (sh "free"))
 
 (sh "free")
+(sh "ls" "-aul")
 
 (defn echo [& args]
   (apply sh "echo" args))
@@ -41,3 +42,5 @@
 
 (defn call-external-prog [& args]
   (apply sh "ps" args))
+
+(println (:out (sh "cowsay" "Printing a command-line output")))
